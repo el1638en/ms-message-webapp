@@ -1,0 +1,26 @@
+<mat-toolbar>
+   <span id="loginPageTitle">{{ 'login.title' | translate }}</span>
+</mat-toolbar>
+<mat-card class="my-card">
+   <mat-card-content>
+      <form class="my-form" [formGroup]="loginForm" novalidate>
+         <mat-form-field class="full-width">
+            <mat-label>{{ 'login.mail.label' | translate }}</mat-label>
+            <input matInput placeholder="{{ 'login.mail.placeholder' | translate }}" name="mail" id="mail"
+               formControlName="mail" required="true">
+         </mat-form-field>
+         <mat-error *ngIf="isControlMissing('mail')" id="errorMail" name="errorMail">{{ 'login.mail.required' | translate }}</mat-error>
+         <mat-form-field class="full-width">
+            <mat-label>{{ 'login.password.label' | translate }}</mat-label>
+            <input matInput placeholder="{{ 'login.password.placeholder' | translate }}" name="password" id="password"
+            formControlName="password" required="true">
+         </mat-form-field>
+         <mat-error *ngIf="isControlMissing('password')" id="errorPassword" name="errorPassword">{{ 'login.password.required' | translate }}</mat-error>
+      </form>
+      <mat-error *ngIf="wrongCredentials" id="wrongCredentials" name="wrongCredentials">{{ 'login.failed' | translate }}</mat-error>
+   </mat-card-content>
+   <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary" id="btnLogin" name="btnLogin">{{ 'login.connect.button' | translate }}</button>
+      <button mat-raised-button (click)="register()" color="primary" id="btnCancel" name="btnCancel">{{ 'login.register.button' | translate }}</button>
+   </mat-card-actions>
+</mat-card>

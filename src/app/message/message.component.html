@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <span *ngIf="createMessage">{{ 'new.message.page.title' | translate }}</span>
+  <span *ngIf="editedMessage">{{ 'edit.message.page.title' | translate }}</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form *ngIf="messageForm" class="my-form" [formGroup]="messageForm" novalidate>
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'message.title.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'message.title.placeholder' | translate }}" name="title" type="text"
+          id="title" formControlName="title" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('title')">{{ 'message.title.required' | translate }}</mat-error>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'message.content.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'message.content.placeholder' | translate }}" name="content" id="content"
+          formControlName="content" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('content')">{{ 'message.content.required' | translate }}</mat-error>
+
+      <mat-form-field>
+        <mat-label>{{ 'message.beginDate.label' | translate }}</mat-label>
+        <input matInput [matDatepicker]="pickerBeginDate"
+          placeholder="{{ 'message.beginDate.placeholder' | translate }}" name="beginDate" id="beginDate"
+          formControlName="beginDate" required="true">
+        <mat-datepicker-toggle matSuffix [for]="pickerBeginDate"></mat-datepicker-toggle>
+        <mat-datepicker #pickerBeginDate></mat-datepicker>
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('beginDate')">{{ 'message.beginDate.required' | translate }}</mat-error>
+
+      <mat-form-field>
+        <mat-label>{{ 'message.endDate.label' | translate }}</mat-label>
+        <input matInput [matDatepicker]="pickerEndDate"
+          placeholder="{{ 'message.endDate.placeholder' | translate }}" name="endDate" id="endDate"
+          formControlName="endDate" required="true">
+        <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEndDate></mat-datepicker>
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('endDate')">{{ 'message.endDate.required' | translate }}</mat-error>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button name="btnSave" id="btnSave" color="primary" type="submit"
+      (click)="save()">{{ 'message.btnSave' | translate }}</button>
+    <a button mat-button routerLink="/messages" id="btnCancel" mat-flat-button
+      color="primary">{{ 'message.btnCancel' | translate }}</a>
+  </mat-card-actions>
+</mat-card>
