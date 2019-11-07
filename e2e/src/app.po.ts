@@ -1,11 +1,23 @@
 import { browser, by, element } from 'protractor';
+import { BrowserUtils } from './utils/browser.utils';
 
-export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+export class AppPo {
+  static async navigateTo() {
+    await browser.waitForAngularEnabled(false);
+    await browser.get(browser.baseUrl);
+    await AppPo.waitForLoadPage();
   }
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+  static async waitForLoadPage() {
+    return await BrowserUtils.waitForPresence(AppPo.appPage(), 'La page principale de l\'application est invisible');
   }
+
+  static appPage() {
+    return element(by.tagName('app-root'));
+  }
+
+  static async getTitleText() {
+    return await AppPo.appPage().element(by.id('loginPageTitle')).getText();
+  }
+
 }

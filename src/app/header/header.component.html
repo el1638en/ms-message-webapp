@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" *ngIf="isAuthenticated()">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/messages" id="home" name="home">{{ 'home' | translate }}</a>
+    <span class="spacer"></span>
+    <a mat-button (click)="useLanguage('fr')" id="fr">{{ 'language.fr' | translate }}</a>
+    <a mat-button (click)="useLanguage('en')" id="en">{{ 'language.en' | translate }}</a>
+    <a mat-button (click)="logout()" id="logout" name="logout">{{ 'logout' | translate }}</a>
+  </mat-toolbar-row>
+</mat-toolbar>

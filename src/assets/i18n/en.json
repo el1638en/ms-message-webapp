@@ -1,0 +1,140 @@
+{
+    "language": {
+        "fr": "FR",
+        "en": "EN"
+    },
+    "home": "Home",
+    "logout": "Logout",
+    "register": {
+        "button": "Register",
+        "title": "Register",
+        "save": {
+            "success": "Your account has been registered successfully.",
+            "failed": "Register failed"
+        },
+        "user": {
+            "name": {
+                "label": "Name",
+                "required": "The name is required",
+                "placeholder": "Name"
+            },
+            "firstName": {
+                "label": "First name",
+                "required": "The first name is required",
+                "placeholder": "First name"
+            },
+            "mail": {
+                "label": "Mail",
+                "required": "Mail is required and must respect good format.",
+                "placeholder": "Mail"
+            },
+            "password": {
+                "label": "Password",
+                "required": "Password is required",
+                "placeholder": "Password"
+            },
+            "confirmPassword": {
+                "label": "Confirm your password",
+                "required": "Confirm your password",
+                "invalid": "Enter same passwords",
+                "placeholder": "Confirm your password"
+            },
+            "birthDay": {
+                "label": "Birth day",
+                "required": "Birth day is required",
+                "placeholder": "Choose your birth day."
+            }
+        }
+    },
+    "login": {
+        "connect": {
+            "button": "Connect"
+        },
+        "register": {
+            "button": "1ere connexion ? Register"
+        },
+        "title": "Connect with login and password",
+        "mail": {
+            "placeholder": "Mail",
+            "label": "Mail",
+            "required": "mail is required"
+        },
+        "password": {
+            "placeholder": "Password",
+            "label": "Password",
+            "required": "Password is required"
+        },
+        "success": "Authentication succeed",
+        "failed": "Login and/or password are wrong."
+    },
+    "messages": {
+        "table": {
+            "id": "Id",
+            "title": "Title",
+            "content": "content",
+            "beginDate": "Begin date",
+            "endDate": "End date",
+            "action": {
+                "label": "Action",
+                "add": "Add message",
+                "edit": "Edit",
+                "delete": "Delete"
+            }
+        },
+        "confirm": {
+            "delete": "Confirm the delete of the message ?"
+        }
+    },
+    "message": {
+        "page": {
+            "title": "New message"
+        },
+        "title": {
+            "placeholder": "Title",
+            "label": "Title",
+            "required": "Title is required"
+        },
+        "content": {
+            "placeholder": "Content",
+            "label": "Content",
+            "required": "Content is required"
+        },
+        "beginDate": {
+            "placeholder": "Begin date",
+            "label": "Begin date",
+            "required": "Begin date is required"
+        },
+        "endDate": {
+            "placeholder": "End date",
+            "label": "End date",
+            "required": "End date is required"
+        },
+        "btnSave": "Edit",
+        "btnCancel": "Cancel",
+        "save": {
+            "success": "Your message has been saved successfully",
+            "failed": "Failed to save the message !"
+        }
+    },
+    "new": {
+        "message": {
+            "page": {
+                "title": "New message"
+            }
+        }
+    },
+    "edit": {
+        "message": {
+            "page": {
+                "title": "Edit message"
+            }
+        }
+    },
+    "global": {
+        "yes": "Yes",
+        "no": "No"
+    },
+    "error": {
+        "internal": "Error on the server. Please, try later."
+    }
+}

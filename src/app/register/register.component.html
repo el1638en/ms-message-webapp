@@ -1,0 +1,59 @@
+<mat-toolbar>
+  <span>{{ 'register.title' | translate }}</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form" [formGroup]="registerForm" novalidate>
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'register.user.name.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'register.user.name.placeholder' | translate }}" name="name" type="text"
+          id="name" formControlName="name" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('name')" id="errorName" name="errorName">{{ 'register.user.name.required' | translate }}</mat-error>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'register.user.firstName.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'register.user.firstName.placeholder' | translate }}" name="firstName"
+          id="firstName" formControlName="firstName" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('firstName')">{{ 'register.user.firstName.required' | translate }}</mat-error>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'register.user.mail.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'register.user.mail.placeholder' | translate }}" name="mail" type="text"
+          id="mail" formControlName="mail" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('mail')" id="errorMail" name="errorMail">{{ 'register.user.mail.required' | translate }}</mat-error>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'register.user.password.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'register.user.password.placeholder' | translate }}" name="password"
+          type="password" id="password" formControlName="password" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('password')">{{ 'register.user.password.required' | translate }}</mat-error>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{ 'register.user.confirmPassword.label' | translate }}</mat-label>
+        <input matInput placeholder="{{ 'register.user.confirmPassword.placeholder' | translate }}"
+          name="confirmPassword" type="password" id="confirmPassword" formControlName="confirmPassword" required="true">
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('confirmPassword')">{{ 'register.user.confirmPassword.required' | translate }}
+      </mat-error>
+      <mat-error *ngIf="submitted && !isValidPassword()">{{ 'register.user.confirmPassword.invalid' | translate }}</mat-error>
+
+      <mat-form-field>
+        <mat-label>{{ 'register.user.birthDay.label' | translate }}</mat-label>
+        <input matInput [matDatepicker]="birthDay"
+          placeholder="{{ 'register.user.birthDay.placeholder' | translate }}"
+          name="birthDay" id="birthDay" formControlName="birthDay" required="true">
+        <mat-datepicker-toggle matSuffix [for]="birthDay"></mat-datepicker-toggle>
+        <mat-datepicker #birthDay></mat-datepicker>
+      </mat-form-field>
+      <mat-error *ngIf="isControlMissing('birthDay')">{{ 'register.user.birthDay.required' | translate }}</mat-error>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button name="btnRegister" color="primary" type="submit"
+      (click)="register()">{{ 'register.button' | translate }}</button>
+  </mat-card-actions>
+</mat-card>

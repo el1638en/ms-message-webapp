@@ -23,6 +23,9 @@ speed-measure-plugin.json
 .settings/
 *.sublime-workspace
 
+# Exclude Sonar scannerwork files
+.scannerwork/
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
